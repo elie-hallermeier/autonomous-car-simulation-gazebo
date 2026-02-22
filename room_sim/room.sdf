@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+
+
+
+  <world name="room_world">
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
+
+
+    <model name="ground">
+    <static>true</static>
+    <link name="link">
+        <collision name="collision">
+        <geometry>
+            <plane>
+            <normal>0 0 1</normal>
+            <size>10 10</size>
+            </plane>
+        </geometry>
+        </collision>
+        <visual name="visual">
+        <geometry>
+            <plane>
+            <normal>0 0 1</normal>
+            <size>10 10</size>
+            </plane>
+        </geometry>
+        </visual>
+    </link>
+    </model>
+
+
+    <!-- North wall -->
+    <model name="wall_north">
+      <static>true</static>
+      <pose>0 1.025 0.15 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>2.05 0.05 0.3</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>2.05 0.05 0.3</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0.3 0.3 0.3 1</emissive>
+        </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- South wall -->
+    <model name="wall_south">
+      <static>true</static>
+      <pose>0 -1.025 0.15 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>2.05 0.05 0.3</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>2.05 0.05 0.3</size></box>
+          </geometry>
+                    <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0.3 0.3 0.3 1</emissive>
+        </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- East wall -->
+    <model name="wall_east">
+      <static>true</static>
+      <pose>1.025 0 0.15 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>0.05 2.05 0.3</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.05 2.05 0.3</size></box>
+          </geometry>
+                    <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0.3 0.3 0.3 1</emissive>
+        </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- West wall -->
+    <model name="wall_west">
+      <static>true</static>
+      <pose>-1.025 0 0.15 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>0.05 2.05 0.3</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.05 2.05 0.3</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0.3 0.3 0.3 1</emissive>
+        </material>
+        </visual>
+      </link>
+    </model>
+  
+
+    <include>
+    <uri>model://simple_car</uri>
+    <name>simple_car</name>
+    <pose>-0.6 0 0.06 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
