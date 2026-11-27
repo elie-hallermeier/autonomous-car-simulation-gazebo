@@ -13,6 +13,11 @@ Real robot vacuums navigate with a spinning lidar or a camera. I wanted to know 
 - `wall_stop.py`: drives at a wall and stops 10 cm from it
 - `wall-roam.py`: roams the room forever
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/room_map_dark.png">
+  <img src="docs/room_map_light.png" alt="Top view of the 10 by 10 m room with four inner walls, the robot and its laser beam" width="520">
+</picture>
+
 ## Architecture
 
 ```mermaid
